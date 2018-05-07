@@ -1,0 +1,440 @@
+[2018-03-20 10:10:35 36635087][MainDialog::MainDialog()][System font scales ratios (1.000000)]
+[2018-03-20 10:10:35 36635203][ReadConfig()]  comNo(1), baudRate(115200)
+[2018-03-20 10:10:35 36635203][main()]   create distinguish_device success
+[2018-03-20 10:10:35 36635214][get_handshake_status()]==>INDEX[1]: SERIAL DEVICE (COM1)
+[2018-03-20 10:10:35 36635214][COMDEV::OpenCom()]create read file (\\.\COM1) OK.
+[2018-03-20 10:10:35 36635214][COMDEV::OpenCom()]create readthread success.
+[2018-03-20 10:10:35 36635214][get_handshake_status()]==>Open com (\\.\COM1) [115200] success
+[2018-03-20 10:10:35 36635214][get_handshake_status()][1]Write request check x9 firmware status commands success.
+[2018-03-20 10:10:35 36635336][get_handshake_status()][2]Write request check x9 firmware status commands success.
+[2018-03-20 10:10:35 36635458][get_handshake_status()][3]Write request check x9 firmware status commands success.
+[2018-03-20 10:10:35 36635579][get_handshake_status()][4]Write request check x9 firmware status commands success.
+[2018-03-20 10:10:35 36635701][get_handshake_status()][5]Write request check x9 firmware status commands success.
+[2018-03-20 10:10:35 36635812][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[1].
+[2018-03-20 10:10:35 36635974][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[2].
+[2018-03-20 10:10:36 36636135][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[3].
+[2018-03-20 10:10:36 36636297][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[4].
+[2018-03-20 10:10:36 36636458][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[5].
+[2018-03-20 10:10:36 36636711][get_handshake_status()]==>INDEX[2]: SERIAL DEVICE (COM2)
+[2018-03-20 10:10:36 36636711][COMDEV::OpenCom()]create read file (\\.\COM2) OK.
+[2018-03-20 10:10:36 36636711][COMDEV::OpenCom()]create readthread success.
+[2018-03-20 10:10:36 36636712][get_handshake_status()]==>Open com (\\.\COM2) [115200] success
+[2018-03-20 10:10:36 36636712][get_handshake_status()][6]Write request check x9 firmware status commands success.
+[2018-03-20 10:10:36 36636823][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[1].
+[2018-03-20 10:10:36 36636986][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[2].
+[2018-03-20 10:10:37 36637149][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[3].
+[2018-03-20 10:10:37 36637311][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[4].
+[2018-03-20 10:10:37 36637473][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[5].
+[2018-03-20 10:10:37 36637726][get_handshake_status()]==>INDEX[1]: SERIAL DEVICE (NULL_COM1)
+[2018-03-20 10:10:37 36637726][COMDEV::OpenCom()]create read file (\\.\COM1) OK.
+[2018-03-20 10:10:37 36637726][COMDEV::OpenCom()]create readthread success.
+[2018-03-20 10:10:37 36637726][get_handshake_status()]==>Open com (\\.\COM1) [115200] success
+[2018-03-20 10:10:37 36637726][get_handshake_status()][6]Write request check x9 firmware status commands success.
+[2018-03-20 10:10:37 36637838][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[1].
+[2018-03-20 10:10:37 36637998][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[2].
+[2018-03-20 10:10:38 36638161][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[3].
+[2018-03-20 10:10:38 36638323][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[4].
+[2018-03-20 10:10:38 36638485][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[5].
+[2018-03-20 10:10:38 36638739][get_handshake_status()]==>INDEX[2]: SERIAL DEVICE (NULL_COM2)
+[2018-03-20 10:10:38 36638739][COMDEV::OpenCom()]create read file (\\.\COM2) OK.
+[2018-03-20 10:10:38 36638739][COMDEV::OpenCom()]create readthread success.
+[2018-03-20 10:10:38 36638739][get_handshake_status()]==>Open com (\\.\COM2) [115200] success
+[2018-03-20 10:10:38 36638739][get_handshake_status()][6]Write request check x9 firmware status commands success.
+[2018-03-20 10:10:38 36638851][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[1].
+[2018-03-20 10:10:39 36639013][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[2].
+[2018-03-20 10:10:39 36639176][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[3].
+[2018-03-20 10:10:39 36639337][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[4].
+[2018-03-20 10:10:39 36639499][get_handshake_status()][Compatible Mode]: Ops write handshake to Android failed[5].
+[2018-03-20 10:10:39 36639752][get_handshake_status()]ERROR+++Handshake Status:[-1] [-1]
+[2018-03-20 10:10:39 36639752][distinguish_device()]Handshake Status:[-1] [-1]
+
+[2018-03-20 10:10:39 36639752][COMDEV::OpenCom()]create read file (\\.\COM1) OK.
+[2018-03-20 10:10:39 36639752][COMDEV::OpenCom()]create readthread success.
+[2018-03-20 10:10:39 36639752][distinguish_device()]NOT X5/X7 X9 SELECT COM[115200](\\.\COM1)
+[2018-03-20 10:10:39 36639752][MainDialog::slot_RS232isAvaliable()]==>CONNECTED TO COM DEVICE
+[2018-03-20 10:10:39 36639853][distinguish_device()]++++++++++create Compatible Mode ops_com_thread success++++++++++
+[2018-03-20 10:20:43 37243234][MainDialog::on_checkButton_clicked()]===>X5 X7 TODO...
+
+[2018-03-20 10:20:43 37243235][MainDialog::on_checkButton_clicked()]SEND APP INFO[#YouTube]: (00230059006f00750054007500620065)
+[2018-03-20 10:20:43 37243235][MainDialog::on_checkButton_clicked()]SEND APP INFO[#GitHub]: (0023004700690074004800750062)
+[2018-03-20 10:20:43 37243235][OPS_SndAppToX5X7()]===>Sync [3] apps to Compatible Mode Device.
+
+[2018-03-20 10:20:43 37243263][Ops_WriteX5X7Files()]PUB_SS->>PostTotalPkgNum: (3)
+[2018-03-20 10:20:43 37243263][UploadWidget::SoltTotalPkgNum()]SET UPLOAD MAX:(3) 
+[2018-03-20 10:20:44 37244264][UploadWidget::SoltTotalPkgNum()]SET UPLOAD MAX:(3) 
+[2018-03-20 10:20:44 37244264][Ops_WriteX5X7Files()]===Snder data to uart(36)[AA 55 1E 00 00 02 00 03 30 30 32 33 30 30 36 33 30 30 36 63 30 30 36 35 30 30 36 31 30 30 37 32 05 05 55 AA ]
+[2018-03-20 10:20:44 37244265][X5X7COM_SndCmdPkg()]write (AA )[1] ok
+[2018-03-20 10:20:44 37244265][X5X7Com_Write()] write (AA )[1] ok
+[2018-03-20 10:20:44 37244265][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0xaa)
+[2018-03-20 10:20:44 37244276][X5X7COM_SndCmdPkg()]write (55 )[1] ok
+[2018-03-20 10:20:44 37244276][X5X7Com_Write()] write (55 )[1] ok
+[2018-03-20 10:20:44 37244276][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x55)
+[2018-03-20 10:20:44 37244287][X5X7COM_SndCmdPkg()]write (1E )[1] ok
+[2018-03-20 10:20:44 37244287][X5X7Com_Write()] write (1E )[1] ok
+[2018-03-20 10:20:44 37244287][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x1e)
+[2018-03-20 10:20:44 37244298][X5X7COM_SndCmdPkg()]write (00 )[1] ok
+[2018-03-20 10:20:44 37244298][X5X7Com_Write()] write (00 )[1] ok
+[2018-03-20 10:20:44 37244298][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x00)
+[2018-03-20 10:20:44 37244309][X5X7COM_SndCmdPkg()]write (00 )[1] ok
+[2018-03-20 10:20:44 37244309][X5X7Com_Write()] write (00 )[1] ok
+[2018-03-20 10:20:44 37244309][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x00)
+[2018-03-20 10:20:44 37244320][X5X7COM_SndCmdPkg()]write (02 )[1] ok
+[2018-03-20 10:20:44 37244320][X5X7Com_Write()] write (02 )[1] ok
+[2018-03-20 10:20:44 37244320][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x02)
+[2018-03-20 10:20:44 37244331][X5X7COM_SndCmdPkg()]write (00 )[1] ok
+[2018-03-20 10:20:44 37244331][X5X7Com_Write()] write (00 )[1] ok
+[2018-03-20 10:20:44 37244331][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x00)
+[2018-03-20 10:20:44 37244342][X5X7COM_SndCmdPkg()]write (03 )[1] ok
+[2018-03-20 10:20:44 37244342][X5X7Com_Write()] write (03 )[1] ok
+[2018-03-20 10:20:44 37244342][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x03)
+[2018-03-20 10:20:44 37244353][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244353][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244353][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244364][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244364][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244364][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244375][X5X7COM_SndCmdPkg()]write (32 )[1] ok
+[2018-03-20 10:20:44 37244375][X5X7Com_Write()] write (32 )[1] ok
+[2018-03-20 10:20:44 37244375][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x32)
+[2018-03-20 10:20:44 37244386][X5X7COM_SndCmdPkg()]write (33 )[1] ok
+[2018-03-20 10:20:44 37244386][X5X7Com_Write()] write (33 )[1] ok
+[2018-03-20 10:20:44 37244386][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x33)
+[2018-03-20 10:20:44 37244397][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244397][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244397][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244408][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244408][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244408][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244419][X5X7COM_SndCmdPkg()]write (36 )[1] ok
+[2018-03-20 10:20:44 37244419][X5X7Com_Write()] write (36 )[1] ok
+[2018-03-20 10:20:44 37244419][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x36)
+[2018-03-20 10:20:44 37244430][X5X7COM_SndCmdPkg()]write (33 )[1] ok
+[2018-03-20 10:20:44 37244430][X5X7Com_Write()] write (33 )[1] ok
+[2018-03-20 10:20:44 37244430][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x33)
+[2018-03-20 10:20:44 37244441][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244441][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244441][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244452][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244452][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244452][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244463][X5X7COM_SndCmdPkg()]write (36 )[1] ok
+[2018-03-20 10:20:44 37244463][X5X7Com_Write()] write (36 )[1] ok
+[2018-03-20 10:20:44 37244463][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x36)
+[2018-03-20 10:20:44 37244473][X5X7COM_SndCmdPkg()]write (63 )[1] ok
+[2018-03-20 10:20:44 37244473][X5X7Com_Write()] write (63 )[1] ok
+[2018-03-20 10:20:44 37244473][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x63)
+[2018-03-20 10:20:44 37244484][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244484][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244484][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244495][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244495][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244495][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244506][X5X7COM_SndCmdPkg()]write (36 )[1] ok
+[2018-03-20 10:20:44 37244506][X5X7Com_Write()] write (36 )[1] ok
+[2018-03-20 10:20:44 37244506][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x36)
+[2018-03-20 10:20:44 37244517][X5X7COM_SndCmdPkg()]write (35 )[1] ok
+[2018-03-20 10:20:44 37244517][X5X7Com_Write()] write (35 )[1] ok
+[2018-03-20 10:20:44 37244517][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x35)
+[2018-03-20 10:20:44 37244528][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244528][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244528][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244539][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244539][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244539][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244550][X5X7COM_SndCmdPkg()]write (36 )[1] ok
+[2018-03-20 10:20:44 37244550][X5X7Com_Write()] write (36 )[1] ok
+[2018-03-20 10:20:44 37244550][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x36)
+[2018-03-20 10:20:44 37244561][X5X7COM_SndCmdPkg()]write (31 )[1] ok
+[2018-03-20 10:20:44 37244561][X5X7Com_Write()] write (31 )[1] ok
+[2018-03-20 10:20:44 37244561][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x31)
+[2018-03-20 10:20:44 37244572][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244572][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244572][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244582][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244582][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244582][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244593][X5X7COM_SndCmdPkg()]write (37 )[1] ok
+[2018-03-20 10:20:44 37244593][X5X7Com_Write()] write (37 )[1] ok
+[2018-03-20 10:20:44 37244593][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x37)
+[2018-03-20 10:20:44 37244604][X5X7COM_SndCmdPkg()]write (32 )[1] ok
+[2018-03-20 10:20:44 37244604][X5X7Com_Write()] write (32 )[1] ok
+[2018-03-20 10:20:44 37244604][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x32)
+[2018-03-20 10:20:44 37244615][X5X7COM_SndCmdPkg()]write (05 )[1] ok
+[2018-03-20 10:20:44 37244615][X5X7Com_Write()] write (05 )[1] ok
+[2018-03-20 10:20:44 37244615][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x05)
+[2018-03-20 10:20:44 37244626][X5X7COM_SndCmdPkg()]write (05 )[1] ok
+[2018-03-20 10:20:44 37244626][X5X7Com_Write()] write (05 )[1] ok
+[2018-03-20 10:20:44 37244626][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x05)
+[2018-03-20 10:20:44 37244637][X5X7COM_SndCmdPkg()]write (55 )[1] ok
+[2018-03-20 10:20:44 37244637][X5X7Com_Write()] write (55 )[1] ok
+[2018-03-20 10:20:44 37244637][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x55)
+[2018-03-20 10:20:44 37244648][X5X7COM_SndCmdPkg()]write (AA )[1] ok
+[2018-03-20 10:20:44 37244648][X5X7Com_Write()] write (AA )[1] ok
+[2018-03-20 10:20:44 37244648][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0xaa)
+[2018-03-20 10:20:44 37244659][Ops_WriteX5X7Files()]===================SENDER END==========================
+[2018-03-20 10:20:44 37244659][Ops_WriteX5X7Files()]PUB_SS->>PostCurrentPkgNum: (1)
+
+[2018-03-20 10:20:44 37244659][UploadWidget::SoltCurrentPkgNum()]SET UPLOAD CURRENT: (1)
+[2018-03-20 10:20:44 37244760][Ops_WriteX5X7Files()]===Snder data to uart(44)[AA 55 26 00 00 02 00 03 30 30 32 33 30 30 35 39 30 30 36 66 30 30 37 35 30 30 35 34 30 30 37 35 30 30 36 32 30 30 36 35 AE 06 55 AA ]
+[2018-03-20 10:20:44 37244760][X5X7COM_SndCmdPkg()]write (AA )[1] ok
+[2018-03-20 10:20:44 37244760][X5X7Com_Write()] write (AA )[1] ok
+[2018-03-20 10:20:44 37244760][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0xaa)
+[2018-03-20 10:20:44 37244771][X5X7COM_SndCmdPkg()]write (55 )[1] ok
+[2018-03-20 10:20:44 37244771][X5X7Com_Write()] write (55 )[1] ok
+[2018-03-20 10:20:44 37244771][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x55)
+[2018-03-20 10:20:44 37244782][X5X7COM_SndCmdPkg()]write (26 )[1] ok
+[2018-03-20 10:20:44 37244782][X5X7Com_Write()] write (26 )[1] ok
+[2018-03-20 10:20:44 37244782][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x26)
+[2018-03-20 10:20:44 37244793][X5X7COM_SndCmdPkg()]write (00 )[1] ok
+[2018-03-20 10:20:44 37244793][X5X7Com_Write()] write (00 )[1] ok
+[2018-03-20 10:20:44 37244793][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x00)
+[2018-03-20 10:20:44 37244804][X5X7COM_SndCmdPkg()]write (00 )[1] ok
+[2018-03-20 10:20:44 37244804][X5X7Com_Write()] write (00 )[1] ok
+[2018-03-20 10:20:44 37244804][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x00)
+[2018-03-20 10:20:44 37244816][X5X7COM_SndCmdPkg()]write (02 )[1] ok
+[2018-03-20 10:20:44 37244816][X5X7Com_Write()] write (02 )[1] ok
+[2018-03-20 10:20:44 37244816][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x02)
+[2018-03-20 10:20:44 37244827][X5X7COM_SndCmdPkg()]write (00 )[1] ok
+[2018-03-20 10:20:44 37244827][X5X7Com_Write()] write (00 )[1] ok
+[2018-03-20 10:20:44 37244827][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x00)
+[2018-03-20 10:20:44 37244838][X5X7COM_SndCmdPkg()]write (03 )[1] ok
+[2018-03-20 10:20:44 37244838][X5X7Com_Write()] write (03 )[1] ok
+[2018-03-20 10:20:44 37244838][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x03)
+[2018-03-20 10:20:44 37244849][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244849][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244849][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244860][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244860][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244860][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244871][X5X7COM_SndCmdPkg()]write (32 )[1] ok
+[2018-03-20 10:20:44 37244871][X5X7Com_Write()] write (32 )[1] ok
+[2018-03-20 10:20:44 37244871][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x32)
+[2018-03-20 10:20:44 37244881][X5X7COM_SndCmdPkg()]write (33 )[1] ok
+[2018-03-20 10:20:44 37244881][X5X7Com_Write()] write (33 )[1] ok
+[2018-03-20 10:20:44 37244881][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x33)
+[2018-03-20 10:20:44 37244892][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244892][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244892][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244903][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244903][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244903][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244914][X5X7COM_SndCmdPkg()]write (35 )[1] ok
+[2018-03-20 10:20:44 37244914][X5X7Com_Write()] write (35 )[1] ok
+[2018-03-20 10:20:44 37244914][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x35)
+[2018-03-20 10:20:44 37244925][X5X7COM_SndCmdPkg()]write (39 )[1] ok
+[2018-03-20 10:20:44 37244925][X5X7Com_Write()] write (39 )[1] ok
+[2018-03-20 10:20:44 37244925][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x39)
+[2018-03-20 10:20:44 37244936][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244936][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244936][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244948][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244948][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244948][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244959][X5X7COM_SndCmdPkg()]write (36 )[1] ok
+[2018-03-20 10:20:44 37244959][X5X7Com_Write()] write (36 )[1] ok
+[2018-03-20 10:20:44 37244959][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x36)
+[2018-03-20 10:20:44 37244970][X5X7COM_SndCmdPkg()]write (66 )[1] ok
+[2018-03-20 10:20:44 37244970][X5X7Com_Write()] write (66 )[1] ok
+[2018-03-20 10:20:44 37244970][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x66)
+[2018-03-20 10:20:44 37244980][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244980][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244980][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:44 37244991][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:44 37244991][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:44 37244991][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245002][X5X7COM_SndCmdPkg()]write (37 )[1] ok
+[2018-03-20 10:20:45 37245002][X5X7Com_Write()] write (37 )[1] ok
+[2018-03-20 10:20:45 37245002][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x37)
+[2018-03-20 10:20:45 37245013][X5X7COM_SndCmdPkg()]write (35 )[1] ok
+[2018-03-20 10:20:45 37245013][X5X7Com_Write()] write (35 )[1] ok
+[2018-03-20 10:20:45 37245013][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x35)
+[2018-03-20 10:20:45 37245024][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245024][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245024][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245035][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245035][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245035][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245046][X5X7COM_SndCmdPkg()]write (35 )[1] ok
+[2018-03-20 10:20:45 37245046][X5X7Com_Write()] write (35 )[1] ok
+[2018-03-20 10:20:45 37245046][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x35)
+[2018-03-20 10:20:45 37245057][X5X7COM_SndCmdPkg()]write (34 )[1] ok
+[2018-03-20 10:20:45 37245057][X5X7Com_Write()] write (34 )[1] ok
+[2018-03-20 10:20:45 37245057][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x34)
+[2018-03-20 10:20:45 37245068][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245068][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245068][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245079][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245079][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245079][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245090][X5X7COM_SndCmdPkg()]write (37 )[1] ok
+[2018-03-20 10:20:45 37245090][X5X7Com_Write()] write (37 )[1] ok
+[2018-03-20 10:20:45 37245090][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x37)
+[2018-03-20 10:20:45 37245101][X5X7COM_SndCmdPkg()]write (35 )[1] ok
+[2018-03-20 10:20:45 37245101][X5X7Com_Write()] write (35 )[1] ok
+[2018-03-20 10:20:45 37245101][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x35)
+[2018-03-20 10:20:45 37245112][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245112][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245112][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245123][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245123][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245123][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245134][X5X7COM_SndCmdPkg()]write (36 )[1] ok
+[2018-03-20 10:20:45 37245134][X5X7Com_Write()] write (36 )[1] ok
+[2018-03-20 10:20:45 37245134][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x36)
+[2018-03-20 10:20:45 37245146][X5X7COM_SndCmdPkg()]write (32 )[1] ok
+[2018-03-20 10:20:45 37245146][X5X7Com_Write()] write (32 )[1] ok
+[2018-03-20 10:20:45 37245146][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x32)
+[2018-03-20 10:20:45 37245157][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245157][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245157][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245168][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245168][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245168][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245179][X5X7COM_SndCmdPkg()]write (36 )[1] ok
+[2018-03-20 10:20:45 37245179][X5X7Com_Write()] write (36 )[1] ok
+[2018-03-20 10:20:45 37245179][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x36)
+[2018-03-20 10:20:45 37245190][X5X7COM_SndCmdPkg()]write (35 )[1] ok
+[2018-03-20 10:20:45 37245190][X5X7Com_Write()] write (35 )[1] ok
+[2018-03-20 10:20:45 37245190][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x35)
+[2018-03-20 10:20:45 37245201][X5X7COM_SndCmdPkg()]write (AE )[1] ok
+[2018-03-20 10:20:45 37245201][X5X7Com_Write()] write (AE )[1] ok
+[2018-03-20 10:20:45 37245201][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0xae)
+[2018-03-20 10:20:45 37245212][X5X7COM_SndCmdPkg()]write (06 )[1] ok
+[2018-03-20 10:20:45 37245212][X5X7Com_Write()] write (06 )[1] ok
+[2018-03-20 10:20:45 37245212][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x06)
+[2018-03-20 10:20:45 37245223][X5X7COM_SndCmdPkg()]write (55 )[1] ok
+[2018-03-20 10:20:45 37245223][X5X7Com_Write()] write (55 )[1] ok
+[2018-03-20 10:20:45 37245223][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x55)
+[2018-03-20 10:20:45 37245234][X5X7COM_SndCmdPkg()]write (AA )[1] ok
+[2018-03-20 10:20:45 37245234][X5X7Com_Write()] write (AA )[1] ok
+[2018-03-20 10:20:45 37245234][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0xaa)
+[2018-03-20 10:20:45 37245245][Ops_WriteX5X7Files()]===================SENDER END==========================
+[2018-03-20 10:20:45 37245245][Ops_WriteX5X7Files()]PUB_SS->>PostCurrentPkgNum: (2)
+
+[2018-03-20 10:20:45 37245245][UploadWidget::SoltCurrentPkgNum()]SET UPLOAD CURRENT: (2)
+[2018-03-20 10:20:45 37245347][Ops_WriteX5X7Files()]===Snder data to uart(40)[AA 55 22 00 00 02 00 03 30 30 32 33 30 30 34 37 30 30 36 39 30 30 37 34 30 30 34 38 30 30 37 35 30 30 36 32 B1 05 55 AA ]
+[2018-03-20 10:20:45 37245347][X5X7COM_SndCmdPkg()]write (AA )[1] ok
+[2018-03-20 10:20:45 37245347][X5X7Com_Write()] write (AA )[1] ok
+[2018-03-20 10:20:45 37245347][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0xaa)
+[2018-03-20 10:20:45 37245358][X5X7COM_SndCmdPkg()]write (55 )[1] ok
+[2018-03-20 10:20:45 37245358][X5X7Com_Write()] write (55 )[1] ok
+[2018-03-20 10:20:45 37245358][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x55)
+[2018-03-20 10:20:45 37245369][X5X7COM_SndCmdPkg()]write (22 )[1] ok
+[2018-03-20 10:20:45 37245369][X5X7Com_Write()] write (22 )[1] ok
+[2018-03-20 10:20:45 37245369][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x22)
+[2018-03-20 10:20:45 37245380][X5X7COM_SndCmdPkg()]write (00 )[1] ok
+[2018-03-20 10:20:45 37245380][X5X7Com_Write()] write (00 )[1] ok
+[2018-03-20 10:20:45 37245380][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x00)
+[2018-03-20 10:20:45 37245391][X5X7COM_SndCmdPkg()]write (00 )[1] ok
+[2018-03-20 10:20:45 37245391][X5X7Com_Write()] write (00 )[1] ok
+[2018-03-20 10:20:45 37245391][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x00)
+[2018-03-20 10:20:45 37245402][X5X7COM_SndCmdPkg()]write (02 )[1] ok
+[2018-03-20 10:20:45 37245402][X5X7Com_Write()] write (02 )[1] ok
+[2018-03-20 10:20:45 37245402][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x02)
+[2018-03-20 10:20:45 37245413][X5X7COM_SndCmdPkg()]write (00 )[1] ok
+[2018-03-20 10:20:45 37245413][X5X7Com_Write()] write (00 )[1] ok
+[2018-03-20 10:20:45 37245413][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x00)
+[2018-03-20 10:20:45 37245424][X5X7COM_SndCmdPkg()]write (03 )[1] ok
+[2018-03-20 10:20:45 37245424][X5X7Com_Write()] write (03 )[1] ok
+[2018-03-20 10:20:45 37245424][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x03)
+[2018-03-20 10:20:45 37245435][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245435][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245435][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245446][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245446][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245446][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245457][X5X7COM_SndCmdPkg()]write (32 )[1] ok
+[2018-03-20 10:20:45 37245457][X5X7Com_Write()] write (32 )[1] ok
+[2018-03-20 10:20:45 37245457][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x32)
+[2018-03-20 10:20:45 37245468][X5X7COM_SndCmdPkg()]write (33 )[1] ok
+[2018-03-20 10:20:45 37245468][X5X7Com_Write()] write (33 )[1] ok
+[2018-03-20 10:20:45 37245468][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x33)
+[2018-03-20 10:20:45 37245478][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245478][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245478][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245489][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245489][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245489][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245500][X5X7COM_SndCmdPkg()]write (34 )[1] ok
+[2018-03-20 10:20:45 37245500][X5X7Com_Write()] write (34 )[1] ok
+[2018-03-20 10:20:45 37245500][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x34)
+[2018-03-20 10:20:45 37245511][X5X7COM_SndCmdPkg()]write (37 )[1] ok
+[2018-03-20 10:20:45 37245511][X5X7Com_Write()] write (37 )[1] ok
+[2018-03-20 10:20:45 37245511][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x37)
+[2018-03-20 10:20:45 37245522][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245522][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245522][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245533][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245533][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245533][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245544][X5X7COM_SndCmdPkg()]write (36 )[1] ok
+[2018-03-20 10:20:45 37245544][X5X7Com_Write()] write (36 )[1] ok
+[2018-03-20 10:20:45 37245544][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x36)
+[2018-03-20 10:20:45 37245555][X5X7COM_SndCmdPkg()]write (39 )[1] ok
+[2018-03-20 10:20:45 37245555][X5X7Com_Write()] write (39 )[1] ok
+[2018-03-20 10:20:45 37245555][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x39)
+[2018-03-20 10:20:45 37245566][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245566][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245566][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245577][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245577][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245577][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245588][X5X7COM_SndCmdPkg()]write (37 )[1] ok
+[2018-03-20 10:20:45 37245588][X5X7Com_Write()] write (37 )[1] ok
+[2018-03-20 10:20:45 37245588][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x37)
+[2018-03-20 10:20:45 37245599][X5X7COM_SndCmdPkg()]write (34 )[1] ok
+[2018-03-20 10:20:45 37245599][X5X7Com_Write()] write (34 )[1] ok
+[2018-03-20 10:20:45 37245599][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x34)
+[2018-03-20 10:20:45 37245610][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245610][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245610][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245621][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245621][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245621][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245632][X5X7COM_SndCmdPkg()]write (34 )[1] ok
+[2018-03-20 10:20:45 37245632][X5X7Com_Write()] write (34 )[1] ok
+[2018-03-20 10:20:45 37245632][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x34)
+[2018-03-20 10:20:45 37245643][X5X7COM_SndCmdPkg()]write (38 )[1] ok
+[2018-03-20 10:20:45 37245643][X5X7Com_Write()] write (38 )[1] ok
+[2018-03-20 10:20:45 37245643][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x38)
+[2018-03-20 10:20:45 37245654][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245654][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245654][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245665][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245665][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245665][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245676][X5X7COM_SndCmdPkg()]write (37 )[1] ok
+[2018-03-20 10:20:45 37245676][X5X7Com_Write()] write (37 )[1] ok
+[2018-03-20 10:20:45 37245676][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x37)
+[2018-03-20 10:20:45 37245687][X5X7COM_SndCmdPkg()]write (35 )[1] ok
+[2018-03-20 10:20:45 37245687][X5X7Com_Write()] write (35 )[1] ok
+[2018-03-20 10:20:45 37245687][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x35)
+[2018-03-20 10:20:45 37245698][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245698][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245698][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245709][X5X7COM_SndCmdPkg()]write (30 )[1] ok
+[2018-03-20 10:20:45 37245709][X5X7Com_Write()] write (30 )[1] ok
+[2018-03-20 10:20:45 37245709][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x30)
+[2018-03-20 10:20:45 37245720][X5X7COM_SndCmdPkg()]write (36 )[1] ok
+[2018-03-20 10:20:45 37245720][X5X7Com_Write()] write (36 )[1] ok
+[2018-03-20 10:20:45 37245720][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x36)
+[2018-03-20 10:20:45 37245731][X5X7COM_SndCmdPkg()]write (32 )[1] ok
+[2018-03-20 10:20:45 37245731][X5X7Com_Write()] write (32 )[1] ok
+[2018-03-20 10:20:45 37245731][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x32)
+[2018-03-20 10:20:45 37245742][X5X7COM_SndCmdPkg()]write (B1 )[1] ok
+[2018-03-20 10:20:45 37245742][X5X7Com_Write()] write (B1 )[1] ok
+[2018-03-20 10:20:45 37245742][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0xb1)
+[2018-03-20 10:20:45 37245753][X5X7COM_SndCmdPkg()]write (05 )[1] ok
+[2018-03-20 10:20:45 37245753][X5X7Com_Write()] write (05 )[1] ok
+[2018-03-20 10:20:45 37245753][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x05)
+[2018-03-20 10:20:45 37245764][X5X7COM_SndCmdPkg()]write (55 )[1] ok
+[2018-03-20 10:20:45 37245764][X5X7Com_Write()] write (55 )[1] ok
+[2018-03-20 10:20:45 37245764][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0x55)
+[2018-03-20 10:20:45 37245775][X5X7COM_SndCmdPkg()]write (AA )[1] ok
+[2018-03-20 10:20:45 37245775][X5X7Com_Write()] write (AA )[1] ok
+[2018-03-20 10:20:45 37245775][Ops_WriteX5X7Files()]START SENDE SNDBUF TO UART BY BYTE[1] (0xaa)
+[2018-03-20 10:20:45 37245786][Ops_WriteX5X7Files()]===================SENDER END==========================
+[2018-03-20 10:20:45 37245786][Ops_WriteX5X7Files()]PUB_SS->>PostCurrentPkgNum: (3)
+
+[2018-03-20 10:20:45 37245787][UploadWidget::SoltCurrentPkgNum()]SET UPLOAD CURRENT: (3)
+[2018-03-20 10:20:45 37245887][X5X7OpsCom_ThreadFn()][Compatible Mode]: Ops write files to Android success
