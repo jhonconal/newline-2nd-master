@@ -5,9 +5,13 @@
 #define  SUPORT_X5X7_DEVICE  1  //支持 X5/X7
 
 #if HHT_CHINA
-   const int  g_baundRate = 19200;  //828.13 国内商务N系列 ,该波特率不兼容X5 X7波特率
+    #if HHT_CHINA_MCU
+        const int  g_baundRate = 19200;  //828.13 国内商务N系列 ,该波特率不兼容X5 X7波特率
+    #else
+        const int  g_baundRate = 115200;//国内X9 X8 X6
+    #endif
 #else
-   const int  g_baundRate = 115200;//海外X9
+   const int  g_baundRate = 115200;//海外X9 X8 X6
 #endif
 
 int g_nWriteStatus = -1;

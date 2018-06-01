@@ -716,7 +716,7 @@ public:
        sprintf(today, "%s", __DATE__);   // 输出格式如下："Jun  8 2012"
        // "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"
        GetYMD(today, y, m, d);
-       sprintf(version, "2.%02d.%02d.%02d-D", y, m, 19);
+       sprintf(version, "2.%02d.%02d.%02d-D", y, m, d);
    }
 
    static bool isCameraLoaded()
