@@ -69,8 +69,8 @@ MainDialog::MainDialog(QWidget *parent) :
 
     initWind();
 
-//    MontageDialog *dialog = new MontageDialog();
-//    dialog->show();
+    //    MontageDialog *dialog = new MontageDialog();
+    //    dialog->show();
 }
 
 MainDialog::~MainDialog()
@@ -164,12 +164,12 @@ void MainDialog::init()
     //ui->label->setText("HiteVision assistant");
     ui->widget->setStyleSheet("border-style:dashed;\
                               border-color:#50A3F0;\
-                              background-color:#FEFEEF;\
-                              border-radius:25px;\
-                              border-image: url(:/Resource/images/Add-space_ch.png);\
-                              background-color:transparent");
-     ui->checkButton->setStyleSheet("border-image: url(:/Resource/images/upkoad_btn_ch.png);");
-     ui->closeButton->setStyleSheet("border-image: url(:/Resource/images/close_bottom_ch.png)");
+            background-color:#FEFEEF;\
+    border-radius:25px;\
+    border-image: url(:/Resource/images/Add-space_ch.png);\
+    background-color:transparent");
+                     ui->checkButton->setStyleSheet("border-image: url(:/Resource/images/upkoad_btn_ch.png);");
+    ui->closeButton->setStyleSheet("border-image: url(:/Resource/images/close_bottom_ch.png)");
     ui->label->setText("鸿合助手");
 #else
     ui->label->setText("Newline assistant");
@@ -247,24 +247,24 @@ void MainDialog::init()
 #ifdef HHT_2ND_PROJECT_SUPPORT
     if(g_nX9FirmwareCheckStatus)//检测到X9固件反馈
     {
-         ui->checkButton->setVisible(false);//隐藏Check/upload按钮
-         ui->closeButton->setVisible(true);//显示Close按钮
+        ui->checkButton->setVisible(false);//隐藏Check/upload按钮
+        ui->closeButton->setVisible(true);//显示Close按钮
     }
     else
     {
-         ui->closeButton->setVisible(false);//隐藏Close按钮
-         ui->checkButton->setVisible(true);//显示Check/upload按钮
+        ui->closeButton->setVisible(false);//隐藏Close按钮
+        ui->checkButton->setVisible(true);//显示Check/upload按钮
     }
 #else
     ui->closeButton->setVisible(false);
 #endif
 
     //--------------------------------------------------托盘相关--------------------------------------------------
- #if  HHT_CHINA
+#if  HHT_CHINA
     QIcon icon = QIcon(":/Resource/images/logo_ch.png");
     trayIcon = new QSystemTrayIcon(this);
     trayIcon->setIcon(icon);
-     trayIcon->setToolTip("鸿合助手");
+    trayIcon->setToolTip("鸿合助手");
     //trayIcon->setToolTip("HiteVision assistant");
 #else
     QIcon icon = QIcon(":/Resource/images/logo.png");
@@ -439,13 +439,15 @@ void MainDialog::ReadRecords()
                 if(fileInfo.isDir())
                 {
                     QFileIconProvider icon_provider;
-                    hhtAppInfo._appIcon = icon_provider.icon(fileInfo);
+                    QFileInfo info = QFileInfo(fileInfo.symLinkTarget());
+                    hhtAppInfo._appIcon = icon_provider.icon(info);
                 }
 #endif
                 if(!fileInfo.isDir())
                 {
-                    QFileInfo file_info(lnkPath);//lnk or exe
-                    if(file_info.filePath().contains(".lnk"))
+                    QFileInfo file_info(lnkPath);//LNK EXE
+//                    if(file_info.filePath().contains(".lnk"))
+                    if(file_info.suffix()=="lnk"||file_info.suffix()=="LNK")
                     {
                         if(file_info.symLinkTarget().isEmpty())
                         {
@@ -461,8 +463,8 @@ void MainDialog::ReadRecords()
                             hhtAppInfo._appIcon = QIcon(getMaxPixmap(file_info.symLinkTarget()));
                         }
                     }
-                    else
-                    {//exe
+                    else    //EXE suport
+                    {
                         hhtAppInfo._appIcon = QIcon(getMaxPixmap(file_info.filePath()));
                     }
                 }
@@ -531,19 +533,19 @@ int MainDialog::sendSingleAppInfoToAndroid(HHTAPPINFO hhtAppInfo)
         HintDialog *hint = new HintDialog();
         if(g_nX9FirmwareCheckStatus)
         {
-            #if HHT_CHINA
+#if HHT_CHINA
             hint->setMassage(QStringLiteral(" 串口 (COM1) 打开失败 . "),-2);
-            #else
+#else
             hint->setMassage(tr(" Serial port (COM1) open failed . "),-2);
-            #endif
+#endif
         }
         else
         {
-            #if HHT_CHINA
+#if HHT_CHINA
             hint->setMassage(QStringLiteral(" 串口(COM2) 打开失败 . "),-2);
-            #else
+#else
             hint->setMassage(tr(" Serial port (COM2) open failed . "),-2);
-            #endif
+#endif
         }
         hint->resize(hint->width()-40,hint->height());
         hint->showParentCenter(this);
@@ -631,7 +633,7 @@ QList<QString> MainDialog::enumUSBDevices()
     for(int i=0;i<usb_device.size();i++)
     {
         qDebug()<<i<<usb_device.at(i);
-         HHT_LOG(EN_INFO, "USB DEVICE LIST :%s ",usb_device.at(i));
+        HHT_LOG(EN_INFO, "USB DEVICE LIST :%s ",usb_device.at(i));
     }
 #endif
     return usb_device;
@@ -724,7 +726,6 @@ QPixmap MainDialog::getMaxPixmap(const QString sourceFile)
     max =QtWin::fromHICON(icons[0]);//获取第一个所谓最佳
     return max;
 }
-
 void MainDialog::mousePressEvent(QMouseEvent *event)
 {
     this->windowPos = this->pos();
@@ -745,6 +746,46 @@ void MainDialog::dragEnterEvent(QDragEnterEvent *event)
 {
     event->acceptProposedAction();
 }
+/**
+ * @brief MainDialog::checkUrlLegality
+ * @param fileInfo
+ * @return  -1->不支持类型  0->文件夹 1 ->.lnk 2 -> exe
+ */
+int MainDialog::checkUrlLegality(QFileInfo fileInfo)
+{
+    QStringList SupporType;
+    int type =-1;
+    SupporType<<"lnk"<<"LNK"<<"exe"<<"EXE";
+    qDebug()<<"1====>"<<fileInfo.absoluteFilePath();
+    qDebug()<<"2====>"<<QFileInfo(fileInfo.symLinkTarget()).absoluteFilePath();
+    if(fileInfo.path().isEmpty())
+        return -1;
+    if(fileInfo.isDir())
+    {
+        //qDebug()<<"Support Type: "<<0;
+        return 0;
+    }
+    for(int i=0;i<SupporType.count();i++)
+    {
+        if(fileInfo.suffix()==SupporType.at(i))
+        {
+            type =i;
+            break;
+        }
+    }
+    if(type==0||type==1)
+    {
+        //qDebug()<<"Support Type: "<<1;
+        return 1;
+    }
+    else if(type==2||type==3)
+    {
+        //qDebug()<<"Support Type: "<<2;
+        return 2;
+    }
+    return -1;
+}
+
 
 void MainDialog::dropEvent(QDropEvent *event)
 {
@@ -766,7 +807,346 @@ void MainDialog::dropEvent(QDropEvent *event)
             QIcon    recodeFileIcon;//记录APP图标
             HHTAPPINFO hhtAppInfo;//HHT app信息
             QFileInfo file_info(fileName);
+#if 1     //完全区分支持文件类型
+            int suportType = checkUrlLegality(file_info);
+///////////////////////////////////////////////////////////////////////////////////////////文件夹支持///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            if(suportType==0)
+            {
+                qDebug()<<"++++++++SUPORT FLODER++++++";
+                QIcon icon;
+                QListWidgetItem *item = new QListWidgetItem();
+                QFont font;
+                font.setFamily("Helvetica");
+                font.setPointSize(qRound(11/g_fontPixelRatio));
+                item->setFont(font);
+                item->setIcon(icon);
+                if(g_fontPixelRatio>=3)
+                {
+                    item->setSizeHint(QSize(150,150));
+                }
+                else
+                {
+                    item->setSizeHint(QSize(120,120));
+                }
+                item->setTextColor(Qt::white);
+                item->setTextAlignment(Qt::AlignVCenter|Qt::AlignHCenter);
 
+                QFileIconProvider icon_provider;
+                item->setText(file_info.completeBaseName());
+                recodeFileName =file_info.completeBaseName();//名字
+                if(file_info.suffix()=="lnk"||file_info.suffix()=="LNK")
+                {
+                    icon = icon_provider.icon(QFileInfo(file_info.symLinkTarget()));
+                    recodeFileIcon = icon;//图标
+                    item->setIcon(icon);
+                    recodeAbsPath =file_info.absoluteFilePath();//dir绝对路径
+                    item->setToolTip(recodeAbsPath);
+                }
+                else
+                {
+                    icon = icon_provider.icon(file_info);
+                    recodeFileIcon = icon;//图标
+                    item->setIcon(icon);
+                    recodeAbsPath =file_info.absoluteFilePath();//dir绝对路径
+                    item->setToolTip(recodeAbsPath);
+                }
+                ////#################################################################################################
+                if(ui->listWidget->count()==0)
+                {
+                    hhtAppInfo._fileName = recodeFileName;
+                    hhtAppInfo._lnkPath = recodeAbsPath;
+                    hhtAppInfo._appIcon = recodeFileIcon;
+#ifdef HHT_2ND_PROJECT_SUPPORT
+                    if(g_nX9FirmwareCheckStatus)
+                    {
+                        int result = sendSingleAppInfoToAndroid(hhtAppInfo);
+                        if(result ==0)
+                        {
+                            if(g_uploadStatus)
+                            {
+                                ui->listWidget->addItem(item);
+                                g_appInfoVector.append(hhtAppInfo);
+                                g_uploadStatus =false;
+                            }
+                        }
+                        else if (result ==1)//newline assistant
+                        {
+                            ui->listWidget->addItem(item);
+                            g_appInfoVector.append(hhtAppInfo);
+                        }
+                    }
+                    else
+                    {
+                        ui->listWidget->addItem(item);
+                        g_appInfoVector.append(hhtAppInfo);
+                    }
+#else
+                    ui->listWidget->addItem(item);
+                    g_appInfoVector.append(hhtAppInfo);
+#endif
+                    WriteRecords();
+                }
+                else
+                {
+                    bool isExist = false;
+                    for(int i=0;i<ui->listWidget->count();i++)
+                    {
+//                        if(ui->listWidget->item(i)->toolTip()==recodeAbsPath)
+                        if(ui->listWidget->item(i)->text()==recodeFileName)
+                        {
+                            isExist = true;
+                            break;
+                        }
+                    }
+                    if(isExist)
+                    {
+                        HintDialog *hint = new HintDialog();
+#if HHT_CHINA
+                        hint->setMassage(QStringLiteral("列表中已存在此项 ."),-1);
+#else
+                        hint->setMassage(tr("The item is already in the list ."),-1);
+#endif
+                        hint->showParentCenter(this);
+                        hint->show();
+                    }
+                    else
+                    {
+                        hhtAppInfo._fileName = recodeFileName;
+                        hhtAppInfo._lnkPath = recodeAbsPath;
+                        hhtAppInfo._appIcon = recodeFileIcon;
+#ifdef HHT_2ND_PROJECT_SUPPORT
+                        if(g_nX9FirmwareCheckStatus)
+                        {
+                            int result = sendSingleAppInfoToAndroid(hhtAppInfo);
+                            if(result ==0)
+                            {
+                                if(g_uploadStatus)
+                                {
+                                    ui->listWidget->addItem(item);
+                                    g_appInfoVector.append(hhtAppInfo);
+                                    g_uploadStatus =false;
+                                }
+                            }
+                            else if (result ==1)//newline assistant
+                            {
+                                ui->listWidget->addItem(item);
+                                g_appInfoVector.append(hhtAppInfo);
+                            }
+                        }
+                        else
+                        {
+                            ui->listWidget->addItem(item);
+                            g_appInfoVector.append(hhtAppInfo);
+                        }
+#else
+                        ui->listWidget->addItem(item);
+                        g_appInfoVector.append(hhtAppInfo);
+#endif
+                        WriteRecords();
+                    }
+                }
+                ////#################################################################################################
+            }
+////////////////////////////////////////////////////////////////////////////////////可执行文件LNK EXE支持//////////////////////////////////////////////////////////////////////////////////////////////////////
+            else if(suportType==1||suportType==2)
+            {
+                QIcon icon;
+                QListWidgetItem *item = new QListWidgetItem();
+                QFont font;
+                font.setFamily("Helvetica");
+                font.setPointSize(qRound(11/g_fontPixelRatio));
+                item->setFont(font);
+                item->setIcon(icon);
+                if(g_fontPixelRatio>=3)
+                {
+                    item->setSizeHint(QSize(150,150));
+                }
+                else
+                {
+                    item->setSizeHint(QSize(120,120));
+                }
+                item->setTextColor(Qt::white);
+                item->setTextAlignment(Qt::AlignVCenter|Qt::AlignHCenter);
+                ////#######################################LNK 支持##########################################################
+                if(suportType==1)  ////link
+                {
+                        QString target = file_info.symLinkTarget();
+                        if(target.isEmpty())
+                        {
+                            qDebug()<<"LNK.====>Target null,but can excutable.";
+                            QFileIconProvider icon_provider;
+                            QIcon icon= icon_provider.icon(file_info);
+                            QPixmap pixmap = icon.pixmap(QSize(100,100));
+                            QIcon appIcon=QIcon(pixmap);
+                            recodeFileIcon = appIcon;
+                            item->setIcon(appIcon);
+                            recodeFileName = file_info.completeBaseName();
+                            item->setText(file_info.completeBaseName());
+                            recodeAbsPath =file_info.filePath();//lnkpath
+                            item->setToolTip(file_info.filePath());
+                        }
+                        else if(QFileInfo(target).suffix()=="exe"||QFileInfo(target).suffix()=="EXE")
+                        {
+                            qDebug()<<"LNK.====>Target is type \"exe\",but can excutable.";
+                            icon =QIcon(getMaxPixmap(file_info.symLinkTarget()));
+                            recodeFileIcon = icon;//图标
+                            item->setIcon(icon);
+                            item->setText(file_info.completeBaseName());
+                            recodeFileName = file_info.completeBaseName();
+                            recodeAbsPath = file_info.filePath();//lnk绝对路径
+                            item->setToolTip(recodeAbsPath);
+                        }
+                        else  //lnk 目标文件不可支持
+                        {
+#if 1
+                        HintDialog *hint = new HintDialog();
+#if HHT_CHINA
+                        hint->setMassage(QStringLiteral("目标文件类型不是可执行文件或者文件夹."),-1);
+#else
+                        hint->setMassage(tr("The target file type is not excutable or floder ."),-1);
+#endif
+                        hint->showParentCenter(this);
+                        hint->show();
+#endif
+                        continue;
+                        }
+                        qDebug()<<"+++++++++++++++++++++excutable: "<<QFileInfo(target).isExecutable();
+                }
+                ////######################################EXE 支持###########################################################
+                else if(suportType==2)  ///exe
+                {
+                    //获取原文件exe绝对路径
+                    //// QFileIconProvider icon_provider;
+                    //// icon = icon_provider.icon(file_info);
+                    icon =QIcon(getMaxPixmap(file_info.filePath()));
+                    recodeFileIcon = icon;//图标
+                    item->setIcon(icon);
+                    item->setText(file_info.completeBaseName());
+                    recodeFileName = file_info.completeBaseName();
+                    //修改为拖入文件路径而非目标路径
+                    qDebug()<<"EXE====>绝对路径: "<<file_info.filePath();
+                    recodeAbsPath = file_info.filePath();
+                    item->setToolTip(recodeAbsPath);
+                }
+
+                ////#################################################################################################
+                if(ui->listWidget->count()==0)
+                {
+                    hhtAppInfo._fileName = recodeFileName;
+                    hhtAppInfo._lnkPath = recodeAbsPath;
+                    hhtAppInfo._appIcon = recodeFileIcon;
+#ifdef HHT_2ND_PROJECT_SUPPORT
+                    if(g_nX9FirmwareCheckStatus)
+                    {
+                        int result = sendSingleAppInfoToAndroid(hhtAppInfo);
+                        if(result ==0)
+                        {
+                            if(g_uploadStatus)
+                            {
+                                ui->listWidget->addItem(item);
+                                g_appInfoVector.append(hhtAppInfo);
+                                g_uploadStatus =false;
+                            }
+                        }
+                        else if (result ==1)//newline assistant
+                        {
+                            ui->listWidget->addItem(item);
+                            g_appInfoVector.append(hhtAppInfo);
+                        }
+                    }
+                    else
+                    {
+                        ui->listWidget->addItem(item);
+                        g_appInfoVector.append(hhtAppInfo);
+                    }
+#else
+                    ui->listWidget->addItem(item);
+                    g_appInfoVector.append(hhtAppInfo);
+#endif
+                    WriteRecords();
+                }
+                else
+                {
+                    bool isExist = false;
+                    for(int i=0;i<ui->listWidget->count();i++)
+                    {
+                        if(ui->listWidget->item(i)->toolTip()==recodeAbsPath)
+                        {
+                            isExist = true;
+                            break;
+                        }
+                    }
+                    if(isExist)
+                    {
+                        HintDialog *hint = new HintDialog();
+#if HHT_CHINA
+                        hint->setMassage(QStringLiteral("列表中已存在此项."),-1);
+#else
+                        hint->setMassage(tr("The item is already in the list ."),-1);
+#endif
+                        hint->showParentCenter(this);
+                        hint->show();
+                    }
+                    else
+                    {
+                        hhtAppInfo._fileName = recodeFileName;
+                        hhtAppInfo._lnkPath = recodeAbsPath;
+                        hhtAppInfo._appIcon = recodeFileIcon;
+#ifdef HHT_2ND_PROJECT_SUPPORT
+                        if(g_nX9FirmwareCheckStatus)
+                        {
+                            int result = sendSingleAppInfoToAndroid(hhtAppInfo);
+                            if(result ==0)
+                            {
+                                if(g_uploadStatus)
+                                {
+                                    ui->listWidget->addItem(item);
+                                    g_appInfoVector.append(hhtAppInfo);
+                                    g_uploadStatus =false;
+                                }
+                            }
+                            else if (result ==1)//newline assistant
+                            {
+                                ui->listWidget->addItem(item);
+                                g_appInfoVector.append(hhtAppInfo);
+                            }
+                        }
+                        else
+                        {
+                            ui->listWidget->addItem(item);
+                            g_appInfoVector.append(hhtAppInfo);
+                        }
+#else
+                        ui->listWidget->addItem(item);
+                        g_appInfoVector.append(hhtAppInfo);
+#endif
+                        WriteRecords();
+                    }
+                }
+                ////#################################################################################################
+
+                qDebug()<<"++++++++SUPORT LNK | EXE++++++";
+            }
+            else
+            {
+                qDebug()<<"++++++++NOT SUPORT++++++";
+                HintDialog *hint = new HintDialog();
+#ifdef  HHT_SUPPORT_DIR
+# if HHT_CHINA
+                hint->setMassage(QStringLiteral("文件格式不支持，请添加\"可执行文件\"或者\"文件夹\"格式. ").arg(file_info.fileName()),-2);
+#else
+                hint->setMassage(tr("Format not supported. You can add .exe and file folder only . ").arg(file_info.fileName()),-2);
+#endif
+#else
+                hint->setMassage(tr("Format not supported. You can add .exe and .lnk files only . ").arg(file_info.fileName()),-2);
+#endif
+                hint->resize(hint->width()-60,hint->height());
+                hint->showParentCenter(this);
+                hint->show();
+                continue;
+            }
+
+#else        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             if (file_info.isDir())
             {
 #ifdef HHT_SUPPORT_DIR
@@ -862,7 +1242,7 @@ void MainDialog::dropEvent(QDropEvent *event)
                     {
                         HintDialog *hint = new HintDialog();
 #if HHT_CHINA
-                       hint->setMassage(QStringLiteral("列表中已存在此项 ."),-1);
+                        hint->setMassage(QStringLiteral("列表中已存在此项 ."),-1);
 #else
                         hint->setMassage(tr("The item is already in the list ."),-1);
 #endif
@@ -914,7 +1294,10 @@ void MainDialog::dropEvent(QDropEvent *event)
                 hint->show();
 #endif
             }
-            else if(file_info.fileName().contains(".exe")||file_info.fileName().contains(".lnk")||file_info.fileName().contains(".EXE")||file_info.fileName().contains(".LNK"))
+//            else if(file_info.fileName().contains(".exe")||file_info.fileName().contains(".lnk")
+//                    ||file_info.fileName().contains(".EXE")||file_info.fileName().contains(".LNK"))
+            else if(file_info.suffix()=="exe"||file_info.suffix()=="lnk"
+                    ||file_info.suffix()=="EXE"||file_info.suffix()=="LNK")
             {
                 QIcon icon;
                 QListWidgetItem *item = new QListWidgetItem();
@@ -933,7 +1316,8 @@ void MainDialog::dropEvent(QDropEvent *event)
                 }
                 item->setTextColor(Qt::white);
                 item->setTextAlignment(Qt::AlignVCenter|Qt::AlignHCenter);
-                if(file_info.fileName().contains(".exe")||file_info.fileName().contains(".EXE"))
+//                if(file_info.fileName().contains(".exe")||file_info.fileName().contains(".EXE"))
+                 if(file_info.suffix()=="exe"||file_info.suffix()=="EXE")
                 {//获取原文件exe绝对路径
                     // QFileIconProvider icon_provider;
                     // icon = icon_provider.icon(file_info);
@@ -947,7 +1331,8 @@ void MainDialog::dropEvent(QDropEvent *event)
                     recodeAbsPath = file_info.filePath();
                     item->setToolTip(recodeAbsPath);
                 }
-                else if (file_info.fileName().contains(".lnk")||file_info.fileName().contains(".LNK"))
+//                else if (file_info.fileName().contains(".lnk")||file_info.fileName().contains(".LNK"))
+                 else if (file_info.suffix()=="lnk"||file_info.suffix()=="LNK")
                 {//获取lnk对应的exe绝对路径
                     qDebug()<<"LNK.====>filePath: "<<file_info.filePath();
                     QString target = file_info.symLinkTarget();
@@ -983,7 +1368,8 @@ void MainDialog::dropEvent(QDropEvent *event)
                         item->setToolTip(recodeAbsPath);
                     }
 #endif
-                    if (target.contains(".exe")||target.contains(".EXE"))
+//                    if (target.contains(".exe")||target.contains(".EXE"))
+                     if (QFileInfo(target).suffix()=="exe"||QFileInfo(target).suffix()=="EXE")
                     {
                         qDebug()<<"LNK 2 =====> "<<file_info.filePath();
                         // QFileIconProvider icon_provider;
@@ -996,8 +1382,23 @@ void MainDialog::dropEvent(QDropEvent *event)
                         recodeAbsPath = file_info.filePath();//lnk绝对路径
                         item->setToolTip(recodeAbsPath);
                     }
+                    else
+                    {
+                        qDebug()<<"++++++++++++++++++++++++++++++++++";
+#if 1
+                        HintDialog *hint = new HintDialog();
+#if HHT_CHINA
+                        hint->setMassage(QStringLiteral("目标文件类型不是可执行文件或者文件夹."),-1);
+#else
+                        hint->setMassage(tr("The target file type is not excutable or floder ."),-1);
+#endif
+                        hint->showParentCenter(this);
+                        hint->show();
+#endif
+                        continue;
+                    }
                 }
-                //----------------------------------------------------------------------------------------------------------------------
+                //---------------------------------------------------------------------------------------------------------------------------
                 if(ui->listWidget->count()==0)
                 {
                     hhtAppInfo._fileName = recodeFileName;
@@ -1048,7 +1449,7 @@ void MainDialog::dropEvent(QDropEvent *event)
                     {
                         HintDialog *hint = new HintDialog();
 #if HHT_CHINA
-                       hint->setMassage(QStringLiteral("列表中已存在此项."),-1);
+                        hint->setMassage(QStringLiteral("列表中已存在此项."),-1);
 #else
                         hint->setMassage(tr("The item is already in the list ."),-1);
 #endif
@@ -1109,6 +1510,7 @@ void MainDialog::dropEvent(QDropEvent *event)
                 hint->showParentCenter(this);
                 hint->show();
             }
+#endif
         }
     }//
     ui->listWidget->setCurrentRow(ui->listWidget->count()-1);//自动滚动到最底层
@@ -1121,19 +1523,19 @@ void MainDialog::slot_RS232isDisabled()
         HintDialog *hint = new HintDialog();
         if(g_nX9FirmwareCheckStatus)
         {
-            #if HHT_CHINA
+#if HHT_CHINA
             hint->setMassage(QStringLiteral(" 串口 (COM1) 打开失败 . "),-2);
-            #else
+#else
             hint->setMassage(tr(" Serial port (COM1) open failed . "),-2);
-            #endif
+#endif
         }
         else
         {
-            #if HHT_CHINA
+#if HHT_CHINA
             hint->setMassage(QStringLiteral(" 串口(COM2) 打开失败 . "),-2);
-            #else
+#else
             hint->setMassage(tr(" Serial port (COM2) open failed . "),-2);
-            #endif
+#endif
         }
         hint->showParentCenter(this);
         this->showNormal();
@@ -1149,19 +1551,19 @@ void MainDialog::slot_TrashOpenCOMFailed()
     HintDialog *hint = new HintDialog();
     if(g_nX9FirmwareCheckStatus)
     {
-        #if HHT_CHINA
+#if HHT_CHINA
         hint->setMassage(QStringLiteral(" 串口 (COM1) 打开失败 . "),-2);
-        #else
+#else
         hint->setMassage(tr(" Serial port (COM1) open failed . "),-2);
-        #endif
+#endif
     }
     else
     {
-        #if HHT_CHINA
+#if HHT_CHINA
         hint->setMassage(QStringLiteral(" 串口(COM2) 打开失败 . "),-2);
-        #else
+#else
         hint->setMassage(tr(" Serial port (COM2) open failed . "),-2);
-        #endif
+#endif
     }
     hint->showParentCenter(this);
     hint->show();
@@ -1313,7 +1715,7 @@ void MainDialog::slot_openProcFromFileName(QString fileName)
                     {
                         HintDialog *hint = new HintDialog();
 #if HHT_CHINA
-                       hint->setMassage(QStringLiteral("执行 %1 应用失败。 ").arg(fileName),-2);
+                        hint->setMassage(QStringLiteral("执行 %1 应用失败。 ").arg(fileName),-2);
 #else
                         hint->setMassage(tr("Excute %1 failed . ").arg(fileName),-2);
 #endif
@@ -1493,21 +1895,21 @@ hint->show();
 //X5/X7 Android打开Windows Apps
 void MainDialog::slot_openProcFromFileNameX5X7(QString fileName)
 {
-        QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));//中文乱码
-        HHT_LOG(EN_INFO, "---Android commands to open program: (%s)",fileName.toLocal8Bit().data());
-        if(fileName!=NULL)
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));//中文乱码
+    HHT_LOG(EN_INFO, "---Android commands to open program: (%s)",fileName.toLocal8Bit().data());
+    if(fileName!=NULL)
+    {
+        for(int i=0;i<g_appInfoVector.count();i++)
         {
-            for(int i=0;i<g_appInfoVector.count();i++)
+            if(g_appInfoVector.at(i)._fileName==fileName)
             {
-                if(g_appInfoVector.at(i)._fileName==fileName)
-                {
-                    LPCWSTR program = (LPCWSTR)g_appInfoVector.at(i)._lnkPath.utf16();
-                    HINSTANCE hInstance;
-                    //使用ShellExecute
-                    hInstance = ShellExecute(NULL,NULL,program,NULL,NULL,SW_NORMAL);
-                }
+                LPCWSTR program = (LPCWSTR)g_appInfoVector.at(i)._lnkPath.utf16();
+                HINSTANCE hInstance;
+                //使用ShellExecute
+                hInstance = ShellExecute(NULL,NULL,program,NULL,NULL,SW_NORMAL);
             }
         }
+    }
 }
 
 void MainDialog::slot_deleteAppFromVector(QString appName)
@@ -1549,19 +1951,19 @@ void MainDialog::slot_deleteAppFromVector(QString appName)
             HintDialog *hint = new HintDialog();
             if(g_nX9FirmwareCheckStatus)
             {
-                #if HHT_CHINA
+#if HHT_CHINA
                 hint->setMassage(QStringLiteral(" 串口 (COM1) 打开失败 . "),-2);
-                #else
+#else
                 hint->setMassage(tr(" Serial port (COM1) open failed . "),-2);
-                #endif
+#endif
             }
             else
             {
-                #if HHT_CHINA
+#if HHT_CHINA
                 hint->setMassage(QStringLiteral(" 串口(COM2) 打开失败 . "),-2);
-                #else
+#else
                 hint->setMassage(tr(" Serial port (COM2) open failed . "),-2);
-                #endif
+#endif
             }
             hint->resize(hint->width()-40,hint->height());
             hint->showParentCenter(this);
@@ -1604,7 +2006,7 @@ void MainDialog::slot_deleteAppFromVectorFailed()
 {
     HintDialog *hint = new HintDialog();
 # if HHT_CHINA
-     hint->setMassage(QStringLiteral("应用删除失败。 "),-2); //删除APP同步到智能设备失败 .
+    hint->setMassage(QStringLiteral("应用删除失败。 "),-2); //删除APP同步到智能设备失败 .
 #else
     hint->setMassage(tr("Delete app and sync with smart system failed . "),-2);
 #endif
@@ -1674,19 +2076,19 @@ void MainDialog::slot_clearAction()
         HintDialog *hint = new HintDialog();
         if(g_nX9FirmwareCheckStatus)
         {
-            #if HHT_CHINA
+#if HHT_CHINA
             hint->setMassage(QStringLiteral(" 串口 (COM1) 打开失败 . "),-2);
-            #else
+#else
             hint->setMassage(tr(" Serial port (COM1) open failed . "),-2);
-            #endif
+#endif
         }
         else
         {
-            #if HHT_CHINA
+#if HHT_CHINA
             hint->setMassage(QStringLiteral(" 串口(COM2) 打开失败 . "),-2);
-            #else
+#else
             hint->setMassage(tr(" Serial port (COM2) open failed . "),-2);
-            #endif
+#endif
         }
         hint->resize(hint->width()-40,hint->height());
         hint->showParentCenter(this);
@@ -1801,18 +2203,18 @@ void MainDialog::slot_pubUsbStatusCheck()
     }
     g_PubUsbOpertationStatus = -1;
 #else
-        if(result)//USB已经挂载
-        {
-                g_nPubUSBCommandsFlag =1;
-                qDebug()<<"Switch : Permission allowed flags...";
-                HHT_LOG(EN_INFO, "Switch : Permission allowed flags...");
-        }
-        else
-        {
-                g_nPubUSBCommandsFlag =0;
-                qDebug()<<"Switch : Permission denied flags...";
-                HHT_LOG(EN_INFO, "Switch : Permission denied flags...");
-        }
+    if(result)//USB已经挂载
+    {
+        g_nPubUSBCommandsFlag =1;
+        qDebug()<<"Switch : Permission allowed flags...";
+        HHT_LOG(EN_INFO, "Switch : Permission allowed flags...");
+    }
+    else
+    {
+        g_nPubUSBCommandsFlag =0;
+        qDebug()<<"Switch : Permission denied flags...";
+        HHT_LOG(EN_INFO, "Switch : Permission denied flags...");
+    }
 #endif
 }
 
@@ -1828,31 +2230,31 @@ void MainDialog::slot_clearAllApp()
 
 void MainDialog::slot_x9FirmwareCheck()
 {
-        g_nX9FirmwareCheckStatus = true;
-        HHT_LOG(EN_INFO,"====>SLOT: Ckeck X9 Firmware Success.");
-        g_nX9FirmwareCheckFlag =-1;
-        //再次初始化界面
+    g_nX9FirmwareCheckStatus = true;
+    HHT_LOG(EN_INFO,"====>SLOT: Ckeck X9 Firmware Success.");
+    g_nX9FirmwareCheckFlag =-1;
+    //再次初始化界面
 #ifdef HHT_2ND_PROJECT_SUPPORT
-        if(g_nX9FirmwareCheckStatus)//检测到X9固件反馈
-        {
-            ui->checkButton->setVisible(false);//隐藏Check/upload按钮
-            ui->closeButton->setVisible(true);//显示Close按钮
-            trayIconMenu->addAction(syncAction);//显示sync Action
-            //trayIconMenu->addAction(clearAction);//显示clear Action
-            trayIconMenu->removeAction(quitAction);//先删除再显示
-            trayIconMenu->addAction(quitAction);//显示quit Action
-            trayIcon->setContextMenu(trayIconMenu);
-            HHT_LOG(EN_INFO," Reset Main GUI of the Newline Assistant.");
-        }
-        else
-        {
-            ui->closeButton->setVisible(false);//隐藏Close按钮
-            ui->checkButton->setVisible(true);//显示Check/upload按钮
-            qDebug()<<"====>This is fucking X5 X7 Device.\n";
-            HHT_LOG(EN_INFO,"===>This is fucking X5 X7 Device.");
-        }
+    if(g_nX9FirmwareCheckStatus)//检测到X9固件反馈
+    {
+        ui->checkButton->setVisible(false);//隐藏Check/upload按钮
+        ui->closeButton->setVisible(true);//显示Close按钮
+        trayIconMenu->addAction(syncAction);//显示sync Action
+        //trayIconMenu->addAction(clearAction);//显示clear Action
+        trayIconMenu->removeAction(quitAction);//先删除再显示
+        trayIconMenu->addAction(quitAction);//显示quit Action
+        trayIcon->setContextMenu(trayIconMenu);
+        HHT_LOG(EN_INFO," Reset Main GUI of the Newline Assistant.");
+    }
+    else
+    {
+        ui->closeButton->setVisible(false);//隐藏Close按钮
+        ui->checkButton->setVisible(true);//显示Check/upload按钮
+        qDebug()<<"====>This is fucking X5 X7 Device.\n";
+        HHT_LOG(EN_INFO,"===>This is fucking X5 X7 Device.");
+    }
 #else
-        ui->closeButton->setVisible(false);
+    ui->closeButton->setVisible(false);
 #endif
 }
 
@@ -1873,19 +2275,19 @@ void MainDialog::on_checkButton_clicked()
                               hint->width(),hint->height());
             if(g_nX9FirmwareCheckStatus)
             {
-                #if HHT_CHINA
+#if HHT_CHINA
                 hint->setMassage(QStringLiteral(" 串口 (COM1) 打开失败 . "),-2);
-                #else
+#else
                 hint->setMassage(tr(" Serial port (COM1) open failed . "),-2);
-                #endif
+#endif
             }
             else
             {
-                #if HHT_CHINA
+#if HHT_CHINA
                 hint->setMassage(QStringLiteral(" 串口(COM2) 打开失败 . "),-2);
-                #else
+#else
                 hint->setMassage(tr(" Serial port (COM2) open failed . "),-2);
-                #endif
+#endif
             }
             hint->show();
         }
@@ -1932,7 +2334,7 @@ void MainDialog::on_checkButton_clicked()
                     OPS_SendFilesToAndroid(aviliableAppNum, listAllFilesNameDataUCharList, listAllFilesDataUCharList);
                     HHT_LOG(EN_INFO,"======>2[X9X8X6]: SYNC APPS.\n");
                     qDebug("======>2[X9X8X6]: SYNC APPS.\n");
-//                    UploadWidget *Upload= new UploadWidget();
+                    //                    UploadWidget *Upload= new UploadWidget();
                     UploadWidget *Upload= new UploadWidget(this);
                     Upload->showParentCenter(this);
                     Upload->show();
@@ -1942,7 +2344,7 @@ void MainDialog::on_checkButton_clicked()
     }
     else
     {
-         //X5 X7处理TODO
+        //X5 X7处理TODO
         qDebug()<<"===>X5 X7 TODO \n";
         HHT_LOG(EN_INFO,"===>X5 X7 TODO...\n");
         //写配置文件
@@ -1954,11 +2356,11 @@ void MainDialog::on_checkButton_clicked()
             hint->setGeometry((this->pos().x()+this->width()/2)- (hint->width()/3),
                               (this->pos().y()+this->height()/2)-(hint->height()/2),
                               hint->width(),hint->height());
-            #if HHT_CHINA
-             hint->setMassage(QStringLiteral("串口 (COM2) 打开失败 . "),-2);
-            #else
+#if HHT_CHINA
+            hint->setMassage(QStringLiteral("串口 (COM2) 打开失败 . "),-2);
+#else
             hint->setMassage(tr("Serial port (COM2) open failed . "),-2);
-            #endif
+#endif
             hint->show();
         }
         else

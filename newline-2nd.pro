@@ -17,7 +17,7 @@ include(Pub/pub.pri)
 INCLUDEPATH += Gui
 
 ###注:国内与国外版本，只需修改以下这个宏定义即可###
-DEFINES += HHT_CHINA   #国内 115200bps
+#DEFINES += HHT_CHINA   #国内 115200bps
 #DEFINES += HHT_CHINA_MCU #国内MCU 19200bps Version
 
 #############################################################################

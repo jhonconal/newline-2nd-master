@@ -5,6 +5,9 @@
 #include <QFont>
 #include <QPoint>
 #include <QMouseEvent>
+
+#define  SHOW_COMMITID_INFO     "1234567"
+
 namespace Ui {
 class AboutDialog;
 }

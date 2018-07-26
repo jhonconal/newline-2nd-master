@@ -15,14 +15,25 @@ AboutDialog::AboutDialog(QWidget *parent) :
     initUiFontSize(g_fontPixelRatio);
     QString Version =hhtHelper::CharToQString(g_Version);
 #if HHT_CHINA
-   // ui->titleLabel->setText("HiteVision assistant");
-   //ui->versionLabel->setText("HiteVision assistant : Version "+Version.mid(0,Version.size()-2) );
     ui->titleLabel->setText(QStringLiteral("鸿合助手"));
-    ui->versionLabel->setText(QStringLiteral("鸿合助手 : Version ")+Version.mid(0,Version.size()-2) );
-    ui->okButton->setText(QStringLiteral("确定"));
+    ui->copyrightLabel->setText("Copyright @ 2018 - 2019 HiteVision. All Rights Reserved.");
+    #ifdef SHOW_COMMITID_INFO
+        ui->versionLabel->setText(QStringLiteral("鸿合助手 : Version ")+Version.mid(0,Version.size()-2)+tr("  (build id: %1)").arg(SHOW_COMMITID_INFO));
+        ui->okButton->setText(QStringLiteral("确定"));
+    #else
+        ui->versionLabel->setText(QStringLiteral("鸿合助手 : Version ")+Version.mid(0,Version.size()-2) );
+        ui->okButton->setText(QStringLiteral("确定"));
+    #endif
 #else
-    ui->titleLabel->setText("Newline assistant");
-    ui->versionLabel->setText("Newline assistant : Version "+Version.mid(0,Version.size()-2) );
+    ui->copyrightLabel->setText("Copyright @ 2018 - 2019 Newline. All Rights Reserved.");
+    #ifdef SHOW_COMMITID_INFO
+        ui->titleLabel->setText("Newline assistant");
+        ui->versionLabel->setText("Newline assistant : Version "+Version.mid(0,Version.size()-2)+tr("  (build id: %1)").arg(SHOW_COMMITID_INFO));
+    #else
+        ui->titleLabel->setText("Newline assistant");
+        ui->versionLabel->setText("Newline assistant : Version "+Version.mid(0,Version.size()-2));
+    #endif
+
 #endif
     setWindowFlags(Qt::Tool | Qt::WindowStaysOnTopHint|Qt::FramelessWindowHint);//窗口置顶
     //this->setWindowModality(Qt::ApplicationModal);//阻塞除当前窗体之外的所有的窗体
@@ -46,10 +57,10 @@ void AboutDialog::initUiFontSize(double fontSizeRatio)
      font.setFamily("Helvetica");
      font.setPointSize(14/g_fontPixelRatio);
      ui->versionLabel->setFont(font);
-     ui->label_2->setFont(font);
+     ui->copyrightLabel->setFont(font);
      ui->okButton->setFont(font);
      QFontMetrics fm = QFontMetrics(font);
-     int text_width = 10+fm.width(ui->versionLabel->text())+50;
+     int text_width = 10+fm.width(ui->copyrightLabel->text())+50;
      this->resize(QSize(text_width,this->height()));
 }
 

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>460</width>
+    <width>475</width>
     <height>150</height>
    </rect>
   </property>
@@ -228,7 +228,7 @@
       </layout>
      </item>
      <item row="1" column="0">
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="copyrightLabel">
        <property name="minimumSize">
         <size>
          <width>332</width>
@@ -242,7 +242,7 @@
         </size>
        </property>
        <property name="text">
-        <string>Copyright (C) 2016-2017</string>
+        <string>Copyright @ 2017 - 2018 HiteVision. All Rights Reserved.</string>
        </property>
       </widget>
      </item>

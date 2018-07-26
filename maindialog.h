@@ -56,6 +56,7 @@ DEFINE_GUID (UsbClassGuid, 0xa5dcbf10L, 0x6530, 0x11d2, 0x90, 0x1f, 0x00, 0xc0, 
 #endif
 #define  MONTAGE  "Montage Receiver" //定义特殊第三方软件Montage
 #define SHOWNORNAL   (WM_USER+0x0004)//自定义SendMessageA 的Msg参数
+
 class NListWidget;
 
 namespace Ui {
@@ -89,6 +90,8 @@ public:
 #endif //Q_OS_WIN32
 
     QPixmap getMaxPixmap(const QString sourceFile);
+    //检测拖入文件合法性
+    int  checkUrlLegality(QFileInfo fileInfo);
 protected:
     void mousePressEvent(QMouseEvent *event);
 
@@ -132,6 +135,7 @@ public slots:
    void slot_clearAllApp();
 
    void slot_x9FirmwareCheck();
+
 private slots:
 
     void on_checkButton_clicked();
